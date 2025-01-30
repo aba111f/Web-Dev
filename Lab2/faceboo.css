@@ -107,7 +107,7 @@ body{
 footer{
     border:none;
     margin-top: 230px;
-    background-color: white;
+    background-color: #F2F3F5;
     width: 100%;
     margin-left: 0px;
     height: 200px;
@@ -116,12 +116,52 @@ a{
     text-decoration: none;
 }
 a:hover{
-    text-decoration: underline;
+    text-decoration: underline;   
 }
-.ftText{
+.holder{
+    color: #737373;
+    margin: 0 auto;
+    width: 980px;
+}
+.firstline{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+.firstline a{
     color: gray;
+    margin-right: 10px;
 }
-.preFtText{
-    text-align: left;
-    margin-left: 400px;
+
+
+.plusbtn{
+    background-color: #f5f6f7;
+    border-color: #ccd0d5;
+    border: 1px solid;
+    border-radius: 2px;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 8px;
+    height: 18px;
+    line-height: 18px;
+}
+.plus{
+    height: 18px;
+    line-height: 18px;
+}
+.foot_underline{
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+}
+
+.f_2_part a{
+
+    color: gray;
+    margin-right: 10px;
+}
+.footer_text{
+    margin-top: 14px;
 }
