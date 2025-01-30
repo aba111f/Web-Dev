@@ -180,3 +180,18 @@ footer{
 footer a:hover{
     text-decoration: underline;
 }
+.OR_holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.line{
+    margin-right: 14px;
+    margin-left: 14px;
+    /* padding-top: 16px; */
+    content: "";
+    height: 1px;
+    color: white;
+    width: 30%;
+    border-bottom: 1px solid gray;
+}
