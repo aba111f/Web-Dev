@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="name">ToDo List</div>
+    </header>
+    <div class="main">
+        <div class="container">
+            <div class="main_title">
+                <h1>ToDo List</h1>
+            </div>
+            <form action="" class="usr_input">
+                <input type="text" placeholder="New Task" class="task" id="user_text">
+                <input type="submit" class="add_btn" value="Add" id="add_button">
+            </form>
+            <div class="blocks" id="block-container">
+                <div class="block" id="add_block">
+                    <div class="part1">
+                        <input type="checkbox" class="checker" id="done">
+                        
+                        <div class="block_name" id="block-text">
+                            <div class="task_text">
+                                For example
+                                <div class="done_line" id="myLine"></div>
+
+                            </div>
+                            
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <img src="trash.png" alt="trash" class="image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
