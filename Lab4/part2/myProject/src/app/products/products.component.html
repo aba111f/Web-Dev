@@ -1,0 +1,19 @@
+<div class="head">
+    <h2 class="title">Products</h2>
+    <button (click)="goHome()">GO TO HOME</button>
+</div>
+<div class="allProducts">
+    <div *ngFor="let product of products" class="product-card">
+        <div class="images">
+            <img [src]="product.image" [alt]="product.name"/>
+        </div>
+        <div class="descriptions">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <p>⭐ {{ product.rating }}</p>
+        </div>
+        
+        <button (click)="share(product)">Share</button>
+    </div>
+</div>
+

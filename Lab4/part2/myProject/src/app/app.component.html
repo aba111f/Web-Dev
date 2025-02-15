@@ -1,0 +1,11 @@
+<div *ngIf="!isProductsPage" class="main">
+  <h1>This is Home Page</h1>
+  <div class="buttons">
+    <button (click)="goToProducts()">GO TO PRODUCTS</button>
+  </div>
+  
+</div>
+
+
+
+<router-outlet></router-outlet>

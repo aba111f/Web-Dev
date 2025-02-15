@@ -1,0 +1,106 @@
+import { Component, Injectable, Pipe, PipeTransform } from '@angular/core';
+import { Routes, RouterModule, provideRouter } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+// Тема: Dependency Injection
+@Injectable({ providedIn: 'root' })
+class UserService {
+  getUser() {
+    return { name: 'Иван', email: 'ivan@example.com', balance: 1250.5, birthday: new Date(1990, 5, 20) };
+  }
+}
+
+// Тема: Pipes
+@Pipe({ name: 'currencyFormat' })
+class CurrencyFormatPipe implements PipeTransform {
+  transform(value: number): string {
+    return new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB' }).format(value);
+  }
+}
+
+@Pipe({ name: 'dateFormat' })
+class DateFormatPipe implements PipeTransform {
+  transform(value: Date): string {
+    return new Intl.DateTimeFormat('ru-RU').format(value);
+  }
+}
+
+@Pipe({ name: 'uppercase' })
+class UppercasePipe implements PipeTransform {
+  transform(value: string): string {
+    return value.toUpperCase();
+  }
+}
+
+@Pipe({ name: 'percentage' })
+class PercentagePipe implements PipeTransform {
+  transform(value: number): string {
+    return `${(value * 100).toFixed(2)}%`;
+  }
+}
+
+// Тема: Создание собственного Pipe
+@Pipe({ name: 'reverseText' })
+class ReverseTextPipe implements PipeTransform {
+  transform(value: string): string {
+    return value.split('').reverse().join('');
+  }
+}
+
+// Тема: Routing
+@Component({
+  selector: 'app-root',
+  template: `
+    <nav>
+      <a routerLink=\"/\">Главная</a>
+      <a routerLink=\"/user\">Пользователь</a>
+    </nav>
+    <router-outlet></router-outlet>
+  `,
+  standalone: true,
+  imports: [RouterModule]
+})
+export class AppComponent {}
+
+export const routes: Routes = [
+  { path: 'user', component: UserComponent }
+];
+export const appConfig = { providers: [provideRouter(routes)] };
+
+// Тема: Forms & Validation
+@Component({
+  selector: 'app-form',
+  template: `
+    <form [formGroup]=\"profileForm\">
+      <input formControlName=\"name\" placeholder=\"Имя\">
+      <input formControlName=\"email\" placeholder=\"Email\">
+      <button [disabled]=\"!profileForm.valid\">Отправить</button>
+    </form>
+  `
+})
+export class FormComponent {
+  profileForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email])
+  });
+}
+
+// Тема: Pipes - форматирование данных
+@Component({
+  selector: 'app-user',
+  template: `
+    <h2>Информация о пользователе</h2>
+    <p>Имя: {{ user.name | uppercase }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Баланс: {{ user.balance | currencyFormat }}</p>
+    <p>Дата рождения: {{ user.birthday | dateFormat }}</p>
+    <p>Прогресс: {{ 0.75 | percentage }}</p>
+    <p>Реверс имени: {{ user.name | reverseText }}</p>
+  `,
+  standalone: true,
+  imports: [CurrencyFormatPipe, DateFormatPipe, UppercasePipe, PercentagePipe, ReverseTextPipe]
+})
+export class UserComponent {
+  user = this.userService.getUser();
+  constructor(private userService: UserService) {}
+}
