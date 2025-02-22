@@ -1,0 +1,21 @@
+<h1 style="text-align: center;">{{this.categoryName}}</h1>
+<div *ngIf="selectedCategory">
+    
+    <div class="allProducts">
+        
+        <div *ngFor="let item of selectedCategory.items" class="product-card" >
+            <a [href]="item.link" target="_blank">
+                <div class="images">
+                    <img [src]="item.image" [alt]="item.name"/>
+                </div>
+                <div class="descriptions">
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description }}</p>
+                    <p>⭐ {{ item.rating }}</p>
+                </div>
+                
+            </a>
+        </div>
+        
+    </div>
+</div>

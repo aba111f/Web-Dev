@@ -1,5 +1,8 @@
 
-<app-header></app-header>
+<div class="head">
+    <h2 class="title">Products</h2>
+    <button (click)="goHome()">GO TO HOME</button>
+</div>
 <div class="allProducts">
     
     <div *ngFor="let product of products" class="product-card">

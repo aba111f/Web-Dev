@@ -1,0 +1,11 @@
+.main{
+    text-align: center;
+}
+.main button{
+    width: 200px;
+    height: 50px;
+    background-color: rgb(52, 206, 155);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,12 @@
+<div *ngIf="!isProductsPage" >
+  <h1 class="main">This is Home Page</h1>
+  <h2>All Categories</h2>
+  <div class="catNames" *ngFor="let category of categories">
+    <a [routerLink]="['/product-item', category.cId, category.categoryName]">{{ category.categoryName }}</a>
+  </div>
+  
+</div>
+
+
+
+<router-outlet></router-outlet>

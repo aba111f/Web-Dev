@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { HeaderComponent } from '../header/header.component';
+
 interface Product {
   image: string;
   name: string;
@@ -13,7 +13,7 @@ interface Product {
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, HeaderComponent],
+  imports: [CommonModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
@@ -104,6 +104,9 @@ export class ProductsComponent {
     window.open(whatsappUrl, '_blank');
   }
   constructor(private router: Router) {}
+  goHome() {
+    this.router.navigate(['/']);
+  }
   
   
 }

@@ -6,7 +6,7 @@ const taskText = document.getElementById("task_text");
 
 function add(event){
     event.preventDefault();
-
+    
     if(userText.value.trim() === ''){
         window.alert("you must write something");
         return;
