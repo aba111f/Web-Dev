@@ -8,13 +8,31 @@
                 <div class="images">
                     <img [src]="item.image" [alt]="item.name"/>
                 </div>
+            </a>
                 <div class="descriptions">
                     <h3>{{ item.name }}</h3>
                     <p>{{ item.description }}</p>
+            
+                    <div class="discount">
+                        <p>Price</p>
+                        <p>{{ item.price }}</p>
+                        <button (click) = "discount(item)">get discount</button>
+                    </div>
+                    
                     <p>⭐ {{ item.rating }}</p>
                 </div>
                 
-            </a>
+            
+            <div class="buttons">
+                <div class="likesBtn">
+                    <span>{{item.likes}}</span>
+                    <button (click)="like(item)">like</button>
+                    
+                </div>
+                <div class="removeBtn">
+                    <button (click)="removeItem(item)">remove</button>
+                </div>
+            </div>
         </div>
         
     </div>

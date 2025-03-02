@@ -21,7 +21,7 @@
       
       text-align: center;
       width: 300px;
-      height: 400px;
+      height: 500px;
     }
     .images{
       width: 174px;
@@ -33,10 +33,11 @@
       text-align: center;
       width: 170px;
       height: 130px;
+      
     }
     
     .descriptions{
-      height: 140px;
+      height: 240px;
     }
     
     
@@ -47,3 +48,13 @@
       padding: 5px 10px;
       cursor: pointer;
     }
+    .buttons{
+      display: flex;
+      justify-content: space-around;
+    } 
+
+.discount{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
