@@ -1,0 +1,35 @@
+.main{
+    display: flex;
+    justify-content: space-around;
+}
+
+.allAlbums{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto ;
+    gap: 10px;
+    /* justify-content: center; */
+
+}
+.album{
+    border: 1px solid black;
+    height: 100px;
+    width: 300px;
+    text-align: center;
+}
+.albumHeading{
+    display: block;
+    text-align: center;
+}
+.leftBar{
+    padding-top: 300px;
+}
+
+.createAlbum{
+    display: block;
+    margin-top: 50px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    height: 300px;
+}
