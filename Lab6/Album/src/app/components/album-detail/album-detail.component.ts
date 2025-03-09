@@ -33,12 +33,13 @@ export class AlbumDetailComponent implements OnInit{
   }
   
   viewPhotos(id: number){
-    
-    this.albumService.getPhotos(id).subscribe({
-      next: (data) => {
-        this.albumService.selectPhoto(data);  
-      }
-    });
+    if(id < 101){
+      this.albumService.getPhotos(id).subscribe({
+        next: (data) => {
+          this.albumService.selectPhoto(data);  
+        }
+      });
+    }
     
     this.router.navigate(['/albums', id, 'photos']);
 
