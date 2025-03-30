@@ -1,0 +1,59 @@
+
+<button (click)="getProducts()">All Products</button>
+<input type="number" [(ngModel)] = 'Pid'>
+<button (click)="getProductById(Pid)">Product by Id</button>
+<button (click)="getCategories()">All Categories</button>
+<input type="number" [(ngModel)] = 'Cid'>
+<button (click)="getCategoryById(Cid)">Category by Id</button>
+<button (click)="getProductsByCategory(Cid)">get Products by Category</button>
+<!-- <router-outlet></router-outlet> -->
+
+<div *ngIf="activeBtn1">
+    <div *ngFor="let item of products">
+        <p>{{item.id}}</p>
+        <p>{{item.name}}</p>
+        <p>{{item.description}}</p>
+        <p>{{item.count}}</p>
+        <p>{{item.price}}</p>
+        <p>{{item.is_active}}</p>
+    </div>
+</div>
+
+
+<div *ngIf="activeBtn2">
+    <div>
+        <p>{{product.id}}</p>
+        <p>{{product.name}}</p>
+        <p>{{product.description}}</p>
+        <p>{{product.count}}</p>
+        <p>{{product.price}}</p>
+        <p>{{product.is_active}}</p>
+    </div>
+</div>
+
+<div *ngIf="activeBtn3">
+    <div *ngFor="let item of categories">
+        <p>{{item.id}}</p>
+        <p>{{item.name}}</p>
+
+    </div>
+</div>
+
+<div *ngIf="activeBtn4">
+
+        <p>{{category.id}}</p>
+        <p>{{category.name}}</p>
+
+</div>
+
+
+<div *ngIf="activeBtn5">
+    <div *ngFor="let item of products">
+        <p>{{item.id}}</p>
+        <p>{{item.name}}</p>
+        <p>{{item.description}}</p>
+        <p>{{item.count}}</p>
+        <p>{{item.price}}</p>
+        <p>{{item.is_active}}</p>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+a:active{
+    color: purple;
+}
+a:hover{
+    color: rgb(126, 126, 126);
+}
+a:visited{
+    color: rgb(24, 106, 24);
+}
