@@ -1,0 +1,17 @@
+<button (click)="loadCompanies()">Company</button>
+<div *ngIf="loaded">
+  <div *ngFor="let item of company">
+    {{item.id}}
+    <button (click)="goVacancy(item.id)">{{item.name}}</button>
+    {{item.description}}
+    {{item.city}}
+  </div>
+
+</div>
+
+<div *ngFor="let item of vacancy">
+  <p>{{ item.id }}</p>
+  <p>{{ item.name }}</p>
+  <p>{{ item.company }}</p>
+  <p>{{ item.salary }}</p>
+</div>
